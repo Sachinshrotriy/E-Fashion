@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -119,4 +120,13 @@ class AdminController extends Controller
 
           return redirect()->back()->with('message', 'Product Added SuccessFully');
      }
+
+     public function orders()
+     {
+
+          $order=Order::all();
+
+          return view('admin.orders',compact('order'));
+     }
+
 }
