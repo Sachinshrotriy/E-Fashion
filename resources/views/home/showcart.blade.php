@@ -49,6 +49,12 @@
             font-size: 20px;
             padding-top: 40px;
         }
+
+        .ept{
+            text-align: center;
+            margin: auto;
+        }
+
     </style>
 </head>
 
@@ -59,60 +65,53 @@
         @include('home.header')
         <!-- end header section -->
 
-        <div class="center">
+        @php
+    $totalprice = 0; // Initialize the $totalprice variable
+@endphp
 
-            <table>
+        @if($cart->count() > 0)
+    <div class="center">
+        <table>
+            <tr>
+                <th class="th_deg">Product Title</th>
+                <th class="th_deg">Product Quantity</th>
+                <th class="th_deg">Price</th>
+                <th class="th_deg">Image</th>
+                <th class="th_deg">Action</th>
+            </tr>
+
+            <?php $totalprice = 0; ?>
+
+            @foreach($cart as $item)
                 <tr>
-                    <th class="th_deg">Product Title</th>
-                    <th class="th_deg">Product Quantity</th>
-                    <th class="th_deg">Price</th>
-                    <th class="th_deg">Image</th>
-                    <th class="th_deg">Action</th>
-                </tr>
-
-                <?php $totalprice = 0; ?>
-
-                @foreach($cart as $cart)
-
-                <tr>
-                    <td>{{$cart->product_title}}</td>
-                    <td>{{$cart->quantity}}</td>
-                    <td>₹{{$cart->price}}</td>
-                    <td><img class="img_deg" src="/product/{{$cart->image}}"></td>
+                    <td>{{ $item->product_title }}</td>
+                    <td>{{ $item->quantity }}</td>
+                    <td>₹{{ $item->price }}</td>
+                    <td><img class="img_deg" src="/product/{{ $item->image }}"></td>
                     <td>
-
-                        <a href="{{url('remove_cart',$cart->id)}}" class="btn btn-danger" onclick="return confirm('Are you sure to remove this Product')">Remove Product</a>
-
+                        <a href="{{ url('remove_cart', $item->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure to remove this Product')">Remove Product</a>
                     </td>
                 </tr>
+                <?php  ?>
+            @endforeach
+        </table>
 
-                <?php $totalprice = $totalprice + $cart->price ?>
+        <div>
+            <h1 class="total_deg">Total Price : ₹{{ $totalprice }}</h1>
+        </div>
 
-                @endforeach
-
-            </table>
-
-            <div>
-                <h1 class="total_deg">Total Price : ₹{{$totalprice}}</h1>
-            </div>
-
-            @if($cart->count() > 0)
-            <div>
-                <h1 style="font-size: 25px; padding-bottom: 15px;">Proceed To Order</h1>
-
-                <a href="{{url('order_now')}}" class="btn btn-warning">Check Out for COD</a>
-
-                <!-- <a href="{{url('/stripe',$totalprice)}}" class="btn btn-danger">Pay Using Card</a> -->
-
-                <a href="#" class="btn btn-danger" onclick="handlePay()">Pay Using Card</a>
-
-
-            </div>
-            @else
-            <div>
-                <p>Your cart is empty. Please add some products to proceed to order.</p>
-            </div>
-            @endif
+        <div>
+            <h1 style="font-size: 25px; padding-bottom: 15px;">Proceed To Order</h1>
+            <a href="{{ url('order_now') }}" class="btn btn-warning">Check Out for COD</a>
+            <!-- <a href="{{ url('/stripe', $totalprice) }}" class="btn btn-danger">Pay Using Card</a> -->
+            <a href="#" class="btn btn-danger" onclick="handlePay()">Pay Using Card</a>
+        </div>
+    </div>
+@else
+    <div class="ept">
+        <p>Your cart is empty. Please add some products to proceed to order.</p>
+    </div>
+@endif
         </div>
     </div>
 

@@ -1,0 +1,11 @@
+composer update/install
+npm install
+php artisan key generate
+
+#setup your .env file with your database name
+
+php artisan migrate
+
+php artisan serve
+
+npm run dev
