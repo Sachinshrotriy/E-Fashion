@@ -2,6 +2,8 @@ composer update/install
 npm install
 php artisan key generate
 
+composer require barryvdh/laravel-dompdf
+
 #setup your .env file with your database name
 
 php artisan migrate

@@ -52,6 +52,8 @@ Route::get('/delivered/{id}',[AdminController::class,'delivered']);
 
 Route::get('/print_pdf/{id}',[AdminController::class,'print_pdf']);
 
+Route::get('/search',[AdminController::class,'searchdata']);
+
 
 Route::get('/product_details/{id}',[HomeController::class,'product_details']);
 
