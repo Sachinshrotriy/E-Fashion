@@ -48,6 +48,7 @@ Route::post('/update_product_confirm/{id}',[AdminController::class,'update_produ
 
 Route::get('/orders',[AdminController::class,'orders']);
 
+Route::get('/delivered/{id}',[AdminController::class,'delivered']);
 
 Route::get('/product_details/{id}',[HomeController::class,'product_details']);
 

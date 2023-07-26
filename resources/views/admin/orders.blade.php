@@ -63,7 +63,7 @@
                 <th>Payment Status</th>
                 <th>Delivery Status</th>
                 <th>Image</th>
-
+                <th>Delivered</th>
                 </tr>
 
                 @foreach($order as $order)
@@ -80,6 +80,15 @@
                     <td>{{$order->delivery_status}}</td>
                     <td>
                         <img class="img_size" src="/product/{{$order->image}}">
+                    </td>
+
+                    <td>
+                   
+                        <a href="{{url('delivered',$order->id)}}" onclick="return confirm('r u sure to deliver this order')" class="btn btn-primary">Delivered</a>
+                       
+                       
+                     
+                      
                     </td>
                 </tr>
 
