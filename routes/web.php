@@ -69,3 +69,6 @@ Route::post('/orderplace',[HomeController::class,'orderPlace'])->middleware('aut
 
 // Route::get('/stripe/{totalprice}',[HomeController::class,'stripe']);
 
+Route::get('/show_order',[HomeController::class,'show_order']);
+
+Route::get('/cancle_order/{id}',[HomeController::class,'cancle_order']);
