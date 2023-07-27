@@ -4,25 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Details Pdf</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #337ab7;
+            text-align: center;
+        }
+        h3 {
+            margin-bottom: 10px;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 50%;
+            height: auto;
+            margin-top: 20px;
+        }
+        .customer-info {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .product-info {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>THIS IS A PDF FILE!!!</h1>
+    <h1>Order Details PDF</h1>
 
-    Customer Name :<h3>{{$order->name}}</h3>
-    Customer Email :<h3>{{$order->email}}</h3>
-    Customer Phone :<h3>{{$order->phone}}</h3>
-    Customer Address :<h3>{{$order->address}}</h3>
-    Customer ID :<h3>{{$order->user_id}}</h3>
+    <div class="customer-info">
+        <h3>Customer Name : {{$order->name}}</h3>
+        <h3>Customer Email : {{$order->email}}</h3>
+        <h3>Customer Phone : {{$order->phone}}</h3>
+        <h3>Customer Address : {{$order->address}}</h3>
+        <h3>Customer ID : {{$order->user_id}}</h3>
+    </div>
 
+    <div class="product-info">
+        <h3>Product Name : {{$order->product_title}}</h3>
+        <h3>Product Price : {{$order->price}}</h3>
+        <h3>Product Quantity : {{$order->quantity}}</h3>
+        <h3>Product Payment Status : {{$order->payment_status}}</h3>
+        <h3>Product ID : {{$order->product_id}}</h3>
+    </div>
 
-    product Name :<h3>{{$order->product_title}}</h3>
-    product Price :<h3>{{$order->price}}</h3>
-    product Quantity :<h3>{{$order->quantity}}</h3>
-    product Payment Status :<h3>{{$order->payment_status}}</h3>
-    product ID :<h3>{{$order->product_id}}</h3>
-
-    <br><br>
-    <img height="250" width="450" src="product/{{$order->image}}">
+    <img src="product/{{$order->image}}" alt="Product Image">
 
 </body>
 </html>
