@@ -72,3 +72,7 @@ Route::post('/orderplace',[HomeController::class,'orderPlace'])->middleware('aut
 Route::get('/show_order',[HomeController::class,'show_order']);
 
 Route::get('/cancle_order/{id}',[HomeController::class,'cancle_order']);
+
+Route::post('/add_comment',[HomeController::class,'add_comment']);
+
+Route::post('/add_reply',[HomeController::class,'add_reply']);
