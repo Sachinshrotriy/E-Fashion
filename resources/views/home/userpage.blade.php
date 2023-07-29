@@ -24,7 +24,7 @@
 
    <style>
     /* Container styles */
-    .container {
+    .container1 {
         text-align: center;
         padding-bottom: 30px;
     }
@@ -87,6 +87,11 @@
       @include('home.slider')
       <!-- end slider section -->
    </div>
+
+   <!-- product section -->
+   @include('home.products')
+   <!-- end product section -->
+
    <!-- why section -->
    @include('home.why')
    <!-- end why section -->
@@ -95,13 +100,9 @@
    @include('home.new_arrival')
    <!-- end arrival section -->
 
-   <!-- product section -->
-   @include('home.products')
-   <!-- end product section -->
-
    <!-- Comment and Reply Section Start -->
 
-   <div class="container">
+   <div class="container1">
         <h1>Comments</h1>
         <form action="{{url('add_comment')}}" method="POST">
             @csrf
