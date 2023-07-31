@@ -90,14 +90,15 @@
    <!-- why section -->
    @include('home.why')
    <!-- end why section -->
+    <!-- product section -->
+    @include('home.products')
+   <!-- end product section -->
 
    <!-- arrival section -->
    @include('home.new_arrival')
    <!-- end arrival section -->
 
-   <!-- product section -->
-   @include('home.products')
-   <!-- end product section -->
+  
 
    <!-- Comment and Reply Section Start -->
 
