@@ -3,7 +3,6 @@
 
 <head>
    <!-- Basic -->
-   <base href="/public">
    <meta charset="utf-8" />
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <!-- Mobile Metas -->
@@ -15,13 +14,13 @@
    <link rel="shortcut icon" href="images/favicon.png" type="">
    <title>E-Fashion</title>
    <!-- bootstrap core css -->
-   <link rel="stylesheet" type="text/css" href="home/css/bootstrap.css" />
+   <link rel="stylesheet" type="text/css" href="{{asset('home/css/bootstrap.css')}}" />
    <!-- font awesome style -->
-   <link href="home/css/font-awesome.min.css" rel="stylesheet" />
+   <link href="{{asset('home/css/font-awesome.min.css')}}" rel="stylesheet" />
    <!-- Custom styles for this template -->
-   <link href="home/css/style.css" rel="stylesheet" />
+   <link href="{{asset('home/css/style.css')}}" rel="stylesheet" />
    <!-- responsive style -->
-   <link href="home/css/responsive.css" rel="stylesheet" />
+   <link href="{{asset('home/css/responsive.css')}}" rel="stylesheet" />
 </head>
 
 <body>
@@ -36,7 +35,7 @@
 
       <div class="col-sm-8" style="width: 100%; padding: 30px; display: flex;">
          <div class="img-box">
-            <img style="max-height: 300px; max-width: 300px;" src="product/{{$product->image}}" alt="">
+            <img style="max-height: 300px; max-width: 300px;" src="/product/{{$product->image}}" alt="">
          </div>
 
          <div class="detail-box" style="padding: 30px; margin:auto;">
@@ -79,11 +78,6 @@
       </div>
 
 
-
-
-      <!-- footer start -->
-      @include('home.footer')
-      <!-- footer end -->
       <div class="cpy_">
          <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
 

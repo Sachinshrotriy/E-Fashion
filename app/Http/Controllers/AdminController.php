@@ -7,16 +7,28 @@ use App\Models\Product;
 use App\Models\Order;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
 use PDF;
 
 class AdminController extends Controller
 {
      public function view_category()
      {
+          if(Auth::id())
+          {
 
-          $data = category::all();
+               $data = category::all();
 
           return view('admin.category', compact('data'));
+
+          }
+          else
+          {
+               return redirect('login');
+          }
+
+          
      }
 
      public function add_category(Request $req)

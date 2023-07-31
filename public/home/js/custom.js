@@ -34,6 +34,12 @@ $(".client_owl-carousel").owlCarousel({
     }
 });
 
+$(document).ready(function() {
+    $("#closeAlert").click(function() {
+        $("#myAlert").fadeOut();
+    });
+});
+
 
 
 /** google_map js **/

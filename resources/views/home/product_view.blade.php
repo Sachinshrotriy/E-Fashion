@@ -1,19 +1,17 @@
 <section class="product_section layout_padding">
    <div class="container">
       <div class="heading_container heading_center">
-         <h2 id="products">
+         <!-- <h2 id="products">
             Our <span>products</span>
-         </h2>
-
-         <br><br>
+         </h2> -->
 
          <div>
 
-         <form action="{{url('product_search')}}" method="GET">
+         <form action="{{url('search_product')}}" method="GET">
 
             @csrf
 
-         <input style="width: 300px;" type="text" name="search" placeholder="Search for Something">
+         <input style="width: 500px;" type="text" name="search" placeholder="Search for Something">
 
          <input type="submit" value="search">
 
@@ -108,11 +106,3 @@
 
       </div>
 </section>
-
-<script>
-    $(document).ready(function() {
-        $("#closeAlert").click(function() {
-            $("#myAlert").fadeOut();
-        });
-    });
-</script>
