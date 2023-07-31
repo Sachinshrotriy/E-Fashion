@@ -88,10 +88,6 @@
       <!-- end slider section -->
    </div>
 
-   <!-- product section -->
-   @include('home.products')
-   <!-- end product section -->
-
    <!-- why section -->
    @include('home.why')
    <!-- end why section -->
@@ -103,11 +99,8 @@
    @include('home.new_arrival')
    <!-- end arrival section -->
 
-<<<<<<< HEAD
   
 
-=======
->>>>>>> 9a7c71e6795ffa184244137adce4a2c5b032a523
    <!-- Comment and Reply Section Start -->
 
    <div class="container1">
