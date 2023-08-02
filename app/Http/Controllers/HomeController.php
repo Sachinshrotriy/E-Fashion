@@ -209,7 +209,7 @@ class HomeController extends Controller
 
         Cart::where('user_id', $userid)->delete();
 
-        return redirect('/show_cart')->with('message', 'We have Recieved Your Order. We Will connect with You very soon...');
+        return redirect('/show_order')->with('message', 'We have received your order. We will connect with you very soon...');
     }
 
     public function stripe($totalprice)

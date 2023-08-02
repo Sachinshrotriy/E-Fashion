@@ -69,7 +69,7 @@
     $totalprice = 0; // Initialize the $totalprice variable
 @endphp
 
-        @if($cart->count() > 0)
+@if($cart->count() > 0)
     <div class="center">
         <table>
             <tr>
@@ -79,8 +79,6 @@
                 <th class="th_deg">Image</th>
                 <th class="th_deg">Action</th>
             </tr>
-
-            <?php $totalprice = 0; ?>
 
             @foreach($cart as $item)
                 <tr>
@@ -92,7 +90,7 @@
                         <a href="{{ url('remove_cart', $item->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure to remove this Product')">Remove Product</a>
                     </td>
                 </tr>
-                <?php  ?>
+                <?php $totalprice += $item->price; // Add the item price to the total price ?>
             @endforeach
         </table>
 
@@ -112,8 +110,6 @@
         <p>Your cart is empty. Please add some products to proceed to order.</p>
     </div>
 @endif
-        </div>
-    </div>
 
     <div class="cpy_">
         <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>

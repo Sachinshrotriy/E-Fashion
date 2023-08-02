@@ -23,46 +23,57 @@
     <link href="home/css/responsive.css" rel="stylesheet" />
     <style type="text/css">
         /* Center the data within the col-sm-8 div */
-        .col-sm-8 {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: auto;
-        }
-
-        /* Style the table */
-        .table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        .table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-
-        /* Style the form and form elements */
-        .cot form {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        h1 {
-            display: flex;
-            font-size: 30px;
-            margin: auto;
-        }
-
         .container {
+            padding: 20px;
+        }
+
+        .checkout-container {
             display: flex;
-            text-align: right;
-            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .checkout-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .col-md-6 {
+            flex: 0 0 48%;
+            max-width: 48%;
+        }
+
+        h1,
+        h5 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            max-width: 400px;
             margin: auto;
+        }
+
+        form textarea {
+            width: 100%;
             padding: 10px;
+            border: 1px solid #ccc;
+            resize: none;
+        }
+
+        .btn-success {
+            margin-top: 10px;
+        }
+
+        .alert {
+            margin-top: 20px;
+        }
+
+        .user-info {
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -77,55 +88,50 @@
         <!-- end header section -->
 
 
-        @if (Session::has('message'))
-        <div class="alert alert-success text-center">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-            <p>{{ Session::get('message') }}</p>
+        @if(session('message'))
+        <div class="alert alert-success" id="myAlert">
+          <button type="button" class="close" id="closeAlert">&times;</button>
+          {{ session('message') }}
         </div>
         @endif
 
+        <div class="container checkout-container">
+            <div class="checkout-form">
+                <div class="col-md-6">
+                    <h1>Order Summary</h1>
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td>Amount</td>
+                                <td>₹ {{$total}}</td>
+                            </tr>
+                            <tr>
+                                <td>Tax</td>
+                                <td>₹ 0</td>
+                            </tr>
+                            <tr>
+                                <td>Total Amount</td>
+                                <td>₹ {{$total}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-        <div class="container">
-            <h1>Order Summary</h1>
-            <h5>User Information</h5>
-            <p>Name: {{ $user->name }}</p>
-            <p>Email: {{ $user->email }}</p>
-        </div>
-
-        <div class="col-sm-8">
-            <table class="table">
-
-                <tbody>
-                    <tr>
-                        <td>Amount</td>
-                        <td>₹ {{$total}}</td>
-                    </tr>
-                    <tr>
-                        <td>Tax</td>
-                        <td>₹ 0</td>
-                    </tr>
-                    <!-- <tr>
-                        <td>Delivery </td>
-                        <td> ₹ 100</td>
-                    </tr> -->
-                    <tr>
-                        <td>Total Amount</td>
-                        <td>₹ {{$total}}</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <!-- Address Form -->
-            <form action="/orderplace" method="POST">
-                @csrf
-                <div class="form-group">
-                    <textarea name="address" placeholder="Enter Your Address" id="address" cols="30" rows="4" required></textarea>
-
-                    <button type="submit" class="btn btn-success">Place Order(COD)</button>
-
+                    <!-- Address Form -->
+                    <form action="/orderplace" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <textarea name="address" placeholder="Enter Your Address" id="address" cols="30" rows="4" required></textarea>
+                            <button type="submit" class="btn btn-success">Place Order (COD)</button>
+                        </div>
+                    </form>
                 </div>
-            </form>
 
+                <div class="col-md-6 user-info">
+                    <h5>User Information</h5>
+                    <p>Name: {{ $user->name }}</p>
+                    <p>Email: {{ $user->email }}</p>
+                </div>
+            </div>
         </div>
     </div>
 
