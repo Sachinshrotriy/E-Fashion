@@ -100,7 +100,7 @@
                            Fast Delivery
                         </h5>
                         <p>
-                           variations of passages of Lorem Ipsum available
+                           Deliever your product to you within 2-3 days
                         </p>
                      </div>
                   </div>
@@ -215,7 +215,7 @@
                            Free Shiping
                         </h5>
                         <p>
-                           variations of passages of Lorem Ipsum available
+                           We are providing free delievery all over India
                         </p>
                      </div>
                   </div>
@@ -236,7 +236,7 @@
                            Best Quality
                         </h5>
                         <p>
-                           variations of passages of Lorem Ipsum available
+                           Differnt quality from others. "Trust Us you'll gonna love"
                         </p>
                      </div>
                   </div>
@@ -244,3 +244,60 @@
             </div>
          </div>
       </section>
+
+      <!-- <section class="why_section layout_padding">
+   <div class="container">
+      <div class="heading_container heading_center">
+         <h2>
+            Why Shop With Us
+         </h2>
+      </div>
+      <div class="row">
+         <div class="col-md-4">
+            <div class="box">
+               <div class="img-box">
+                  <img src="path/to/your/logo1.png" alt="Fast Delivery Logo">
+               </div>
+               <div class="detail-box">
+                  <h5>
+                     Fast Delivery
+                  </h5>
+                  <p>
+                     Deliver your product to you within 2-3 days
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-4">
+            <div class="box">
+               <div class="img-box">
+                  <img src="path/to/your/logo2.png" alt="Free Shipping Logo">
+               </div>
+               <div class="detail-box">
+                  <h5>
+                     Free Shipping
+                  </h5>
+                  <p>
+                     We are providing free delivery all over India
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-4">
+            <div class="box">
+               <div class="img-box">
+                  <img src="path/to/your/logo3.png" alt="Best Quality Logo">
+               </div>
+               <div class="detail-box">
+                  <h5>
+                     Best Quality
+                  </h5>
+                  <p>
+                     Different quality from others.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section> -->
