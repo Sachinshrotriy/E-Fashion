@@ -24,7 +24,7 @@
                   <a class="nav-link" href="blog_list.html">Blog</a>
                </li> -->
                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact</a>
+                  <a class="nav-link" href="{{url('contact')}}">Contact</a>
                </li>
                <li class="nav-item">
                   <a class="nav-link" href="{{url('show_cart')}}">Cart</a>
@@ -40,27 +40,27 @@
                </form>
 
                @if (Route::has('login'))
-               @auth
-               <li class="nav-item">
-                  <form method="POST" action="{{ route('logout') }}" class="inline">
-                     @csrf
-                     <button type="submit" id="logincss" class="btn btn-primary">
-                        {{ __('Log Out') }}
-                     </button>
-                  </form>
-               </li>
-               @else
-
-               <li class="nav-item">
+               <li class="nav-item dropdown">
+                  @auth
+                  <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Welcome, {{ Auth::user()->name }}
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="userDropdown">
+                     <form method="POST" action="{{ route('logout') }}" class="dropdown-item">
+                        @csrf
+                        <button type="submit" class="btn btn-primary">
+                           {{ __('Log Out') }}
+                        </button>
+                     </form>
+                  </div>
+                  @else
                   <a class="btn btn-primary" id="logincss" href="{{ route('login') }}">LogIn</a>
-               </li>
-
-               <li class="nav-item">
                   <a class="btn btn-success" href="{{ route('register') }}">Register</a>
+                  @endauth
                </li>
-               @endauth
-
                @endif
+
+
 
             </ul>
          </div>

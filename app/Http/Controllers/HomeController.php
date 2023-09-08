@@ -345,4 +345,18 @@ class HomeController extends Controller
 
     }
 
+    public function contact()
+    {
+        return view('home.contact');
+    }
+
+    public function showPage()
+{
+    // Get the currently logged-in user
+    $user = Auth::user();
+    
+    // Pass the user data to the view
+    return view('your.view.name', ['user' => $user]);
+}
+
 }

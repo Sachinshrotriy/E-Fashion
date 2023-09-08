@@ -7,9 +7,9 @@
                         <a href="#"><img width="210" src="images/logo.png" alt="#" /></a>
                       </div>
                       <div class="information_f">
-                        <p><strong>ADDRESS:</strong> 28 White tower, Street Name New York City, USA</p>
-                        <p><strong>TELEPHONE:</strong> +91 987 654 3210</p>
-                        <p><strong>EMAIL:</strong> yourmain@gmail.com</p>
+                        <p><strong>Rajeev</strong> Academy for Technology and Management Mathura(Uttar Pradesh)-281001</p>
+                        <p><strong>Contact:</strong> +91 7536011971</p>
+                        <p><strong>EMAIL:</strong> sachinshrotriy@gmail.com</p>
                       </div>
                    </div>
                </div>
@@ -22,15 +22,15 @@
                         <h3>Menu</h3>
                         <ul>
                            <li><a href="#">Home</a></li>
-                           <li><a href="#">About</a></li>
-                           <li><a href="#">Services</a></li>
-                           <li><a href="#">Testimonial</a></li>
-                           <li><a href="#">Blog</a></li>
-                           <li><a href="#">Contact</a></li>
+                           <li><a href="{{url('products')}}">Products</a></li>
+                           <li><a href="{{url('show_cart')}}">cart</a></li>
+                           <li><a href="{{url('show_order')}}">orders</a></li>
+                           <!-- <li><a href="#">Blog</a></li> -->
+                           <li><a href="{{url('contact')}}">Contact</a></li>
                         </ul>
                      </div>
                   </div>
-                  <div class="col-md-6">
+                  <!-- <div class="col-md-6">
                      <div class="widget_menu">
                         <h3>Account</h3>
                         <ul>
@@ -42,7 +42,7 @@
                            <li><a href="#">Widget</a></li>
                         </ul>
                      </div>
-                  </div>
+                  </div> -->
                      </div>
                   </div>     
                   <div class="col-md-5">

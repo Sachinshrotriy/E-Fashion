@@ -1,12 +1,31 @@
 @include('admin.css')
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="#"><img src="admin/assets/images/logo.png" alt="logo" /></a>
-          <a class="sidebar-brand brand-logo-mini" href="#"><img src="admin/assets/images/logo-mini.png" alt="logo" /></a>
+  <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+    <a class="sidebar-brand brand-logo" href="#"><img src="admin/assets/images/logo.png" alt="logo" /></a>
+    <a class="sidebar-brand brand-logo-mini" href="#"><img src="admin/assets/images/logo-mini.png" alt="logo" /></a>
+  </div>
+  <ul class="nav">
+    <li class="nav-item profile">
+
+
+    <li class="nav-item profile">
+      <div class="profile-desc">
+        <!-- Display user's profile picture and name -->
+        <div class="profile-pic">
+          <div class="count-indicator">
+            <img class="img-xs rounded-circle" src="images/favicon.png" alt="">
+            <span class="count bg-success"></span>
+          </div>
+          <div class="profile-name">Welcome..
+            <h5 class="mb-0 font-weight-normal">{{ Auth::user()->name }}</h5>
+            <span>{{ Auth::user()->role }}</span> <!-- Assuming you have a 'role' field -->
+          </div>
         </div>
-        <ul class="nav">
-          <li class="nav-item profile">
-            <div class="profile-desc">
+      </div>
+    </li>
+
+
+    <!-- <div class="profile-desc">
               <div class="profile-pic">
                 <div class="count-indicator">
                   <img class="img-xs rounded-circle " src="admin/assets/images/faces/face15.jpg" alt="">
@@ -52,53 +71,53 @@
                   </div>
                 </a>
               </div>
-            </div>
-          </li>
-          <li class="nav-item nav-category">
-            <span class="nav-link">Navigation</span>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="{{url('/redirect')}}">
-              <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
-              </span>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="{{url('/view_product')}}">
-              <span class="menu-icon">
-                <i class="mdi mdi-plus-box"></i>
-              </span>
-              <span class="menu-title">Add Products</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="{{url('/show_product')}}">
-              <span class="menu-icon">
-                <i class="mdi mdi-play"></i>
-              </span>
-              <span class="menu-title">Show Products</span>
-            </a>
-          </li>
-          
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ url('view_category') }}">
-              <span class="menu-icon">
-                <i class="mdi mdi-playlist-play"></i>
-              </span>
-              <span class="menu-title">Category</span>
-            </a>
-          </li>
+            </div> -->
+    </li>
+    <li class="nav-item nav-category">
+      <span class="nav-link">Navigation</span>
+    </li>
+    <li class="nav-item menu-items">
+      <a class="nav-link" href="{{url('/redirect')}}">
+        <span class="menu-icon">
+          <i class="mdi mdi-speedometer"></i>
+        </span>
+        <span class="menu-title">Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item menu-items">
+      <a class="nav-link" href="{{url('/view_product')}}">
+        <span class="menu-icon">
+          <i class="mdi mdi-plus-box"></i>
+        </span>
+        <span class="menu-title">Add Products</span>
+      </a>
+    </li>
+    <li class="nav-item menu-items">
+      <a class="nav-link" href="{{url('/show_product')}}">
+        <span class="menu-icon">
+          <i class="mdi mdi-play"></i>
+        </span>
+        <span class="menu-title">Show Products</span>
+      </a>
+    </li>
 
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ url('orders') }}">
-              <span class="menu-icon">
-                <i class="mdi mdi-playlist-play"></i>
-              </span>
-              <span class="menu-title">Orders</span>
-            </a>
-          </li>
+    <li class="nav-item menu-items">
+      <a class="nav-link" href="{{ url('view_category') }}">
+        <span class="menu-icon">
+          <i class="mdi mdi-playlist-play"></i>
+        </span>
+        <span class="menu-title">Category</span>
+      </a>
+    </li>
 
-        </ul>
-      </nav>
+    <li class="nav-item menu-items">
+      <a class="nav-link" href="{{ url('orders') }}">
+        <span class="menu-icon">
+          <i class="mdi mdi-playlist-play"></i>
+        </span>
+        <span class="menu-title">Orders</span>
+      </a>
+    </li>
+
+  </ul>
+</nav>

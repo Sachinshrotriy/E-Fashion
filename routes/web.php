@@ -44,6 +44,8 @@ Route::get('/show_product',[AdminController::class,'show_product']);
 
 Route::get('/update_product/{id}',[AdminController::class,'update_product']);
 
+Route::get('/delete_product/{id}',[AdminController::class,'delete_product']);
+
 Route::post('/update_product_confirm/{id}',[AdminController::class,'update_product_confirm']);
 
 Route::get('/orders',[AdminController::class,'orders']);
@@ -82,3 +84,5 @@ Route::get('/product_search',[HomeController::class,'product_search']);
 Route::get('/search_product',[HomeController::class,'search_product']); //for product dif page
 
 Route::get('/products',[HomeController::class,'products']);
+
+Route::get('/contact',[HomeController::class,'contact']);

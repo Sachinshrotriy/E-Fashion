@@ -151,18 +151,22 @@
    <!-- Comment and Reply Section End -->
 
    <!-- subscribe section -->
-   @include('home.subscribe')
+  
+   <!-- @include('home.subscribe') -->
+  
    <!-- end subscribe section -->
    <!-- client section -->
-   @include('home.client')
+
+   <!-- @include('home.client') -->
+   
    <!-- end client section -->
    <!-- footer start -->
    @include('home.footer')
    <!-- footer end -->
    <div class="cpy_">
-      <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
+      <p class="mx-auto">© 2023 All Rights Reserved By <a href="https://github.com/Sachinshrotriy/E-Fashion">E-Fashion</a><br>
 
-         Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+         RATM College Project <a href="https://github.com/Sachinshrotriy/E-Fashion" target="_blank">E-Fashion</a>
 
       </p>
    </div>
